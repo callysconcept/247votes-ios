@@ -33,4 +33,10 @@ document.addEventListener('deviceready', function () {
     .endInit();
   }catch(e){
   }
+
+ document.addEventListener("backbutton", function(e){
+           e.preventDefault();
+           navigator.app.exitApp();
+    }, false);
+	
 }, false);
