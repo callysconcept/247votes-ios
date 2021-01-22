@@ -12,7 +12,7 @@
 <preference name="android-targetSdkVersion" value="28"/> 
 <preference name="loadUrlTimeoutValue" value="60000" />
 	
-    <content src="www/index.html" />
+    <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     
 	<plugin name="onesignal-cordova-plugin" source="npm" spec="2.4.5" />
