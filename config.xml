@@ -48,7 +48,7 @@
  
   
   <platform name="windows">
-        <icon src="res/icon/windows/Wide310x150Logo.scale-240.png" platform="windows" width="744" height="360"/>
+        <icon src="res/icon/android/mipmap-xxxhdpi/247votes.png" platform="windows" width="744" height="360"/>
     </platform>
 	
 	
