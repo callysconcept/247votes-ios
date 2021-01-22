@@ -23,7 +23,7 @@ document.addEventListener('deviceready', function () {
   // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
   try{
   var notificationOpenedCallback = function(jsonData) {
-	alert(JSON.stringify(jsonData));
+	//alert(JSON.stringify(jsonData));
     console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
   };
 
