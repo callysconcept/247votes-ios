@@ -655,7 +655,7 @@ var setup = settings.setup;
 	alert("1");
 if(setup != 1){
 alert("2");
-$.post("https://247votes.com.ng/app/api.php",{id:'appReg',data:myJSON},function(response){
+$.post("http://247votes.com.ng/app/api.php",{id:'appReg'},function(response){
 	alert("3");
 if(response == 1){
 alert("Kindly click allow to unlock all functions.\nIf not application would not function well.");
