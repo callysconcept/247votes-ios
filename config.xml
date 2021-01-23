@@ -7,7 +7,9 @@
     <author email="support@callysconcept.com" href="http://247votes.com.ng">
         CALLYs Global Concept
     </author>
-	
+<config-file target="AndroidManifest.xml" parent="/manifest">
+    <uses-sdk tools:overrideLibrary="org.apache.cordova" />
+<config-file>	
 <!--<preference name='phonegap-version' value='cli-9.0.0' />
 <preference name='pgb-builder-version' value='2' /> 
 <preference name="android-targetSdkVersion" value="28"/>
