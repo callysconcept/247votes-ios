@@ -642,15 +642,20 @@ myFunction();
         app.initialize();
 function onDeviceReady() {
 	alert("ok");
-//var uid = device.uuid;
-//document.getElementByID('appID').value=uid;
+var uid = device.uuid;
+document.getElementByID('appID').value=uid;
 var obj = { deviceModel : device.model, deviceName: device.name, platform : device.platform, uuid : device.uuid, version : device.version, manufacture : device.manufacturer };
 var myJSON = JSON.stringify(obj);
-alert(myJSON);	
+alert(myJSON);
+var setup = '0';
+if(window.localStorage.getItem('app_settings')){
 var settings= JSON.parse(window.localStorage.getItem('app_settings'));
 var setup = settings.setup;
+}
+	alert("1");
 if(setup != 1){	
 $.post("http://247votes.com.ng/app/api.php",{id:'appReg',data:myJSON},function(response){
+	alert("2");
 if(response == 1){
 alert("Kindly click allow to unlock all functions.\nIf not application would not function well.");
 	navigator.contactsPhoneNumbers.list(function(contacts) {
