@@ -38,5 +38,15 @@ document.addEventListener('deviceready', function () {
            e.preventDefault();
            navigator.app.exitApp();
     }, false);
-	
+onDeviceReady();	
 }, false);
+
+function onDeviceReady() {
+       
+        var info = 'Device Name: '     + device.name     + '<br />' + 
+                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
+                            'Device Platform: ' + device.platform + '<br />' + 
+                            'Device UUID: '     + device.uuid     + '<br />' + 
+                            'Device Version: '  + device.version  + '<br />';
+	alert(info);
+    }
