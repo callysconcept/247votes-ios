@@ -43,10 +43,13 @@ onDeviceReady();
 
 function onDeviceReady() {
        
-        var info = 'Device Name: '     + device.name     + '<br />' + 
-                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
-                            'Device Platform: ' + device.platform + '<br />' + 
-                            'Device UUID: '     + device.uuid     + '<br />' + 
-                            'Device Version: '  + device.version  + '<br />';
+        var info = "";
+                info += "The Device Model : " + device.model + "\n";
+                info += "Device Name: " + device.name + "\n";
+                info += "Cordova version : " + device.cordova + "\n";
+                info += "Platform : " + device.platform + "\n";
+                info += "UUID : " + device.uuid + "\n";
+                info += "Version : " + device.version + "\n";
+                info += "Manufacture : " + device.manufacturer + "\n";
 	alert(info);
     }
