@@ -26,7 +26,7 @@
     <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.7.1" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.5" />
 	<plugin name="cordova-plugin-whitelist" spec="~1.3.3" />
-	<plugin name="Contacts" value="org.apache.cordova.ContactManager" />
+	<plugin name="cordova-plugin-contacts-phonenumbers" source="npm" />
 	
     <platform name="android">
     <plugin name="cordova-android-support-gradle-release" source="npm">
