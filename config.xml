@@ -1,11 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.callysconcept.c247votes" version="1.0.0" android-versionCode="10000">
-  <edit-config file="AndroidManifest.xml" target="/manifest" mode="merge">
-        <manifest xmlns:tools="http://schemas.android.com/tools" />
-    </edit-config>
-    <edit-config file="AndroidManifest.xml" target="/manifest/uses-sdk" mode="merge">
-        <uses-sdk tools:overrideLibrary="org.apache.cordova" />
-    </edit-config>
+  
 	<name>247votes</name>
     <description>
         Nigeria's First Online Voting Platform | 247Votes NIG LTD
@@ -19,7 +14,7 @@
 <preference name="android-targetSdkVersion" value="28"/>
 <preference name="android-build-tool" value="gradle" />-->
 <preference name="phonegap-version" value="cli-9.0.0" />
-<preference name="android-minSdkVersion" value="16" />
+<preference name="android-minSdkVersion" value="19" />
 <preference name="target-device" value="universal" /> 
 <preference name="loadUrlTimeoutValue" value="60000" />
 	
