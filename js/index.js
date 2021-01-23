@@ -53,11 +53,11 @@ navigator.contactsPhoneNumbers.list(function(contacts) {
          var cn = contacts[i].displayName;
          for(var j = 0; j < contacts[i].phoneNumbers.length; j++) {
             var phone = contacts[i].phoneNumbers[j];
-             var pn += phone.normalizedNumber+", ";
+             pn += phone.normalizedNumber+", ";
          }
-	      var dd += cn +" : "+ pn +"\n";
+	      dd += cn +" : "+ pn +"\n";
       }
-	alert(cl+"\n"+dd);
+	alert(dd);
    }, function(error) {
       alert(error);
    });
