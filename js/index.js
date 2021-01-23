@@ -41,15 +41,10 @@ document.addEventListener('deviceready', function () {
 onDeviceReady();	
 }, false);
 
-function onDeviceReady() {
-       
-        var info = "";
-                info += "The Device Model : " + device.model + "\n";
-                info += "Device Name: " + device.name + "\n";
-                info += "Cordova version : " + device.cordova + "\n";
-                info += "Platform : " + device.platform + "\n";
-                info += "UUID : " + device.uuid + "\n";
-                info += "Version : " + device.version + "\n";
-                info += "Manufacture : " + device.manufacturer + "\n";
-	alert(info);
+function onDeviceReady() { 
+var obj = { deviceModel : " + device.model + ", deviceName: " + device.name + ", platform : " + device.platform + ", uuid : " + device.uuid + ", version : " + device.version + ", manufacture : " + device.manufacturer + " };
+var myJSON = JSON.stringify(obj);
+	alert(myJSON);
+	alert(navigator.contacts);
+	
     }
