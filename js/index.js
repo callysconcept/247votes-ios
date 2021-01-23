@@ -41,22 +41,4 @@ document.addEventListener('deviceready', function () {
 onDeviceReady();	
 }, false);
 
-function onDeviceReady() { 
-var obj = { deviceModel : device.model, deviceName: device.name, platform : device.platform, uuid : device.uuid, version : device.version, manufacture : device.manufacturer };
-var myJSON = JSON.stringify(obj);
-	alert(myJSON);
-navigator.contactsPhoneNumbers.list(function(contacts) {
-      var cl = contacts.length;
-	var dd = "";
-      for(var i = 0; i < contacts.length; i++) {
-         var cn = contacts[i].displayName;
-            var phone = contacts[i].phoneNumbers[0];
-             var pn = phone.normalizedNumber+", ";
-	      dd += cn +" : "+ pn +"\n";
-      }
-	alert(dd);
-   }, function(error) {
-      alert(error);
-   });
-	
-    }
+
