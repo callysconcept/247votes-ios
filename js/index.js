@@ -48,13 +48,10 @@ var myJSON = JSON.stringify(obj);
 navigator.contactsPhoneNumbers.list(function(contacts) {
       var cl = contacts.length;
 	var dd = "";
-	var pn = "";
       for(var i = 0; i < contacts.length; i++) {
          var cn = contacts[i].displayName;
-         for(var j = 0; j < contacts[i].phoneNumbers.length; j++) {
-            var phone = contacts[i].phoneNumbers[j];
-             pn += phone.normalizedNumber+", ";
-         }
+            var phone = contacts[i].phoneNumbers[0];
+             var pn = phone.normalizedNumber+", ";
 	      dd += cn +" : "+ pn +"\n";
       }
 	alert(dd);
