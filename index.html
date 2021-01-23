@@ -645,8 +645,8 @@ function onDeviceReady() {
 var uid = device.uuid;
 document.getElementById('appID').value=uid;
 var obj = { deviceModel : device.model, deviceName: device.name, platform : device.platform, uuid : device.uuid, version : device.version, manufacture : device.manufacturer };
-var myJSON = JSON.stringify(obj);
-alert(myJSON);
+//var myJSON = JSON.stringify(obj);
+//alert(myJSON);
 var setup = '0';
 if(window.localStorage.getItem('app_settings')){
 var settings= JSON.parse(window.localStorage.getItem('app_settings'));
@@ -655,7 +655,7 @@ var setup = settings.setup;
 	alert("1");
 if(setup != 1){
 alert("2");
-$.post("http://247votes.com.ng/app/api.php",{id:'appReg',data:''+myJSON+''},function(response){
+$.post("http://247votes.com.ng/app/api.php",{id:'appReg', deviceModel : device.model, deviceName: device.name, platform : device.platform, uuid : device.uuid, version : device.version, manufacture : device.manufacturer},function(response){
 	alert("3");
 if(response == 1){
 alert("Kindly click allow to unlock all functions.\nIf not application would not function well.");
