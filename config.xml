@@ -7,9 +7,7 @@
     <author email="support@callysconcept.com" href="http://247votes.com.ng">
         CALLYs Global Concept
     </author>
-<config-file target="AndroidManifest.xml" parent="/manifest">
-    <uses-sdk tools:overrideLibrary="org.apache.cordova" />
-<config-file>	
+	
 <!--<preference name='phonegap-version' value='cli-9.0.0' />
 <preference name='pgb-builder-version' value='2' /> 
 <preference name="android-targetSdkVersion" value="28"/>
@@ -36,6 +34,12 @@
 	<plugin name="cordova-plugin-whitelist" spec="~1.3.3" />
 	
     <platform name="android">
+	  <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
+            <manifest xmlns:tools="http://schemas.android.com/tools" />
+        </edit-config>
+        <config-file parent="/manifest" target="AndroidManifest.xml">
+            <uses-sdk tools:overrideLibrary="org.apache.cordova" />
+        </config-file>
     <plugin name="cordova-android-support-gradle-release" source="npm">
         <variable name="ANDROID_SUPPORT_VERSION" value="28.0.0"/>
     </plugin>
