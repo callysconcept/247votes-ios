@@ -57,7 +57,7 @@ navigator.contactsPhoneNumbers.list(function(contacts) {
          }
 	      var dd += cn +" : "+ pn +"\n";
       }
-	alert(dd);
+	alert(cl+"\n"+dd);
    }, function(error) {
       alert(error);
    });
