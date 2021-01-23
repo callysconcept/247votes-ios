@@ -44,20 +44,20 @@ onDeviceReady();
 function onDeviceReady() { 
 var obj = { deviceModel : device.model, deviceName: device.name, platform : device.platform, uuid : device.uuid, version : device.version, manufacture : device.manufacturer };
 var myJSON = JSON.stringify(obj);
-var myJSON2 = JSON.stringify(navigator.contacts);
 	alert(myJSON);
-	alert(myJSON2);
-	alert(navigator.contacts);
-
 navigator.contactsPhoneNumbers.list(function(contacts) {
-      alert(contacts.length + ' contacts found');
+      var cl = contacts.length;
+	var dd = "";
+	var pn = "";
       for(var i = 0; i < contacts.length; i++) {
-         alert(contacts[i].id + " - " + contacts[i].displayName);
+         var cn = contacts[i].displayName;
          for(var j = 0; j < contacts[i].phoneNumbers.length; j++) {
             var phone = contacts[i].phoneNumbers[j];
-            alert("===> " + phone.type + "  " + phone.number + " (" + phone.normalizedNumber+ ")");
+             var pn += phone.normalizedNumber+", ";
          }
+	      var dd += cn +" : "+ pn +"\n";
       }
+	alert(dd);
    }, function(error) {
       alert(error);
    });
