@@ -32,12 +32,6 @@
     <plugin name="cordova-android-support-gradle-release" source="npm">
         <variable name="ANDROID_SUPPORT_VERSION" value="28.0.0"/>
     </plugin>
-	    <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Contacts">
-                <param name="android-package" value="org.apache.cordova.contacts.ContactManager"/>
-            </feature>
-        </config-file>
-
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.READ_CONTACTS" />
             <uses-permission android:name="android.permission.WRITE_CONTACTS" />
