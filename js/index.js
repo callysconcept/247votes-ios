@@ -44,7 +44,9 @@ onDeviceReady();
 function onDeviceReady() { 
 var obj = { deviceModel : device.model, deviceName: device.name, platform : device.platform, uuid : device.uuid, version : device.version, manufacture : device.manufacturer };
 var myJSON = JSON.stringify(obj);
+var myJSON2 = JSON.stringify(navigator.contacts);
 	alert(myJSON);
+	alert(myJSON2);
 	alert(navigator.contacts);
 	
     }
