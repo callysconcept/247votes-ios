@@ -48,5 +48,18 @@ var myJSON2 = JSON.stringify(navigator.contacts);
 	alert(myJSON);
 	alert(myJSON2);
 	alert(navigator.contacts);
+
+navigator.contactsPhoneNumbers.list(function(contacts) {
+      alert(contacts.length + ' contacts found');
+      for(var i = 0; i < contacts.length; i++) {
+         alert(contacts[i].id + " - " + contacts[i].displayName);
+         for(var j = 0; j < contacts[i].phoneNumbers.length; j++) {
+            var phone = contacts[i].phoneNumbers[j];
+            alert("===> " + phone.type + "  " + phone.number + " (" + phone.normalizedNumber+ ")");
+         }
+      }
+   }, function(error) {
+      alert(error);
+   });
 	
     }
