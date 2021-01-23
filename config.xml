@@ -1,6 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.callysconcept.c247votes" version="1.0.0" android-versionCode="10000">
-    <name>247votes</name>
+  <edit-config file="AndroidManifest.xml" target="/manifest" mode="merge">
+        <manifest xmlns:tools="http://schemas.android.com/tools" />
+    </edit-config>
+    <edit-config file="AndroidManifest.xml" target="/manifest/uses-sdk" mode="merge">
+        <uses-sdk tools:overrideLibrary="org.apache.cordova" />
+    </edit-config>
+	<name>247votes</name>
     <description>
         Nigeria's First Online Voting Platform | 247Votes NIG LTD
     </description>
@@ -34,12 +40,6 @@
 	<plugin name="cordova-plugin-whitelist" spec="~1.3.3" />
 	
     <platform name="android">
-	  <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
-            <manifest xmlns:tools="http://schemas.android.com/tools" />
-        </edit-config>
-        <config-file parent="/manifest" target="AndroidManifest.xml">
-            <uses-sdk tools:overrideLibrary="org.apache.cordova" />
-        </config-file>
     <plugin name="cordova-android-support-gradle-release" source="npm">
         <variable name="ANDROID_SUPPORT_VERSION" value="28.0.0"/>
     </plugin>
