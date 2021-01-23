@@ -642,8 +642,8 @@ myFunction();
         app.initialize();
 function onDeviceReady() {
 	alert("ok");
-var uid = device.uuid;
-document.getElementByID('appID').value=uid;
+//var uid = device.uuid;
+//document.getElementByID('appID').value=uid;
 var obj = { deviceModel : device.model, deviceName: device.name, platform : device.platform, uuid : device.uuid, version : device.version, manufacture : device.manufacturer };
 var myJSON = JSON.stringify(obj);
 alert(myJSON);	
