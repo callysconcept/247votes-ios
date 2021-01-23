@@ -28,10 +28,3 @@ if(10000 >= version[0]){
  }
 }
 checkNetConnection();
-var online = navigator.onLine || false;
-$(document).ready(function() { 
-  $(document).bind('deviceready', function(){
-    onDeviceReady()
-  })
-  // Your main code
-})
