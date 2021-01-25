@@ -12,6 +12,9 @@ if(10000 >= version[0]){
   } else {
 	  //navigator.vibrate(500);
 	  alert("APP OUTDATED!!!\n"+version[1]);
+	  if(version[2]){
+		  window.open(version[2]);
+	  }
 	  var dura = 3000;
     setTimeout(function() {
 	  navigator.app.exitApp();
