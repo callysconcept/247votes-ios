@@ -220,7 +220,7 @@ input::placeholder {
 	<img id="login-logo" src="images/logo.png" style="width:100px;margin-top:30px;">
 	<div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);width:340px">
 	<p><b>Enter Phone Number to Proceed</b></p>
-	<div style="margin:0px 10px;"><input type="tel" id="phone" name="phone" minlength="11" maxlength="11" style="text-align:center" required></div>
+	<div style="margin:0px 10px;"><input type="tel" id="phone" oninput="this.value = this.value.replace(/[^0-9]/g, '');" name="phone" minlength="11" maxlength="11" style="text-align:center" required></div>
 <br>
 	<input type="submit" value="Get Code" id="phone-submit">
 	</div>
