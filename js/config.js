@@ -7,7 +7,7 @@
 xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var version = this.responseText.split(" || ");
-if(10000 >= version[0]){
+if(15000 >= version[0]){
    return true;
   } else {
 	  //navigator.vibrate(500);
