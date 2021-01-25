@@ -251,7 +251,7 @@ background-color: #008000bd !important;
 <div id="ads" style="max-height:153px;width: 100%;
 position: absolute;
 left: 0;
-top: 50px;overflow:hidden" src="http://247v.icu/ads.php"></div>
+top: 50px;overflow:hidden" src="https://247v.icu/ads.php"></div>
 <div style="padding-top: 15px;
 font-size: 2rem;
 font-weight: 600;
@@ -262,7 +262,7 @@ color: #fff;position:relative;background:rgb(0,0,0,0.3);height: 135px;" id="ads-
 
 <script>
 $(document).ready(function(){
-        $('#ads').load('http://247v.icu/ads.php'); 
+        $('#ads').load('https://247v.icu/ads.php'); 
        
     });
 </script>
@@ -776,7 +776,7 @@ getDefault();
 function getData(){
 //hideLoad();
 var phn = getUsername();
-$.post('http://247votes.com.ng/app/api.php', {id:'getData',user:phn}, function(response){
+$.post('https://247votes.com.ng/app/api.php', {id:'getData',user:phn}, function(response){
 //alert(response);
 if(response == '0'){
 //window.location.href="index.html#login";
@@ -807,7 +807,7 @@ return false;
 showLoad();
 console.log($(window).height());
 $('#transBody').css('max-height',$(window).height()-250);
-$.post('http://admin.247v.icu/php/api', {id:'getTrans',user:phn}, function(response){
+$.post('https://admin.247v.icu/php/api', {id:'getTrans',user:phn}, function(response){
 $('#myModal').modal('show');
 if(response == '0'){
 //window.location.href="index.html#login";
@@ -855,7 +855,7 @@ $(document).ready(function(){
 		
         var resultDropdown = $(this).parent(".result");
         if(inputVal.length > 3){
-            $.post("http://admin.247v.icu/php/api", {id:'getPoll',text: inputVal}).done(function(data){
+            $.post("https://admin.247v.icu/php/api", {id:'getPoll',text: inputVal}).done(function(data){
 			
                 $(".result").html(data);
             });
@@ -915,7 +915,7 @@ hideLoad();
     $('#verifyload').fadeIn('slow');
     var a = $('#verifyTxt').val();
     if(a.length > 15){
-    $.post('http://admin.247v.icu/php/api',{data:'verify',ref:a},function(response){
+    $.post('https://admin.247v.icu/php/api',{data:'verify',ref:a},function(response){
     $('#verifyload').hide();
     $('#verifyresult').html(response).fadeIn('slow');    
     });
@@ -934,7 +934,7 @@ function custFunc(){
 showLoad();
 var a = $("#linkID").val();
 var phn = getUsername();
-$.post('http://247votes.com.ng/app/api.php', {id:'linkID', 'linkID':a, 'phone':phn}, function(response){
+$.post('https://247votes.com.ng/app/api.php', {id:'linkID', 'linkID':a, 'phone':phn}, function(response){
 if(response == '1'){
 alert("Profile Sync Successful!\nYour account has been linked.\nKindly login to complete process...");
 window.location.href='index.html#page4';
@@ -982,7 +982,7 @@ $("#chatForm").on("submit", function(event){
 event.preventDefault();
 var formValues= new FormData(this);
 $.ajax({
-  url: 'http://247votes.com.ng/app/api.php', 
+  url: 'https://247votes.com.ng/app/api.php', 
   type: 'POST',
   data: formValues, // The form with the file inputs.
   processData: false,
@@ -1003,7 +1003,7 @@ $.ajax({
 function loadMsg(){
 var a = $('#pollID').val();
 var b = getUniqueID();
-$.post('http://247votes.com.ng/app/api.php',{id:'loadMsg',pollID:a,uniqueID:b},function(data){
+$.post('https://247votes.com.ng/app/api.php',{id:'loadMsg',pollID:a,uniqueID:b},function(data){
 $('#chatBody').html(data);
 $('#openChatDiv').focus();
 $("#text").val('');
@@ -1025,7 +1025,7 @@ document.getElementById('chatBody').scrollIntoView(false);
 
 function getMsgCount(){
 var a = getUsername();
-$.post('http://247votes.com.ng/app/api.php',{id:'getMsgCount',phone:a},function(data){
+$.post('https://247votes.com.ng/app/api.php',{id:'getMsgCount',phone:a},function(data){
 if(data > '0'){
 $('#chat-bub').html(data);
 $('#chat-bub').fadeIn();
@@ -1069,7 +1069,7 @@ $('#imageUp').attr('disabled',false);
 $('#text').attr('disabled',false);
 $('#subBtn').attr('disabled',false);
 }
-$.post('http://247votes.com.ng/app/api.php',{id:c,uniqueID:a},function(data){
+$.post('https://247votes.com.ng/app/api.php',{id:c,uniqueID:a},function(data){
 //console.log(data);
 $('#chatBody').css('min-height',$(window).height()-140);
 $('#chatDivBody').css('min-height',$(window).height()-140);
